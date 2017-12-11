@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray city = jsonObj.getJSONArray("allcity");
 
                     // looping through All City
-                    for (int i = 0; i < city.length(); i++) {
+                    for (int i = 0; i <= city.length(); i++) {
                         JSONObject c = city.getJSONObject(i);
 
                         String id = c.getString("cityId");
@@ -128,9 +128,9 @@ public class MainActivity extends AppCompatActivity {
              * */
             ListAdapter adapter = new SimpleAdapter(
                     MainActivity.this, cityList,
-                    R.layout.list_item, new String[]{"cityName", "cityDescription",
+                    R.layout.list_item, new String[]{"cityName", "cityDescription", "cityImage"
             }, new int[]{R.id.city,
-                    R.id.desc,});
+                    R.id.desc, R.id.imgView});
 
             lv.setAdapter(adapter);
         }
